@@ -21,7 +21,7 @@ The `TaxForm` component is a React form for applying tax to items. It allows use
 
 To use the `TaxForm` component, clone this repository and install the dependencies:
 
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/muhammadarbazhere/TEST.git
 cd your-repo-name
 npm install
 npm run dev
