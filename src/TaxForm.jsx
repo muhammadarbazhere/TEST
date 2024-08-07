@@ -71,9 +71,10 @@ const TaxForm = () => {
     setItems(updatedItems);
   };
 
-  const handleApplyTax = (values) => {
+  const handleApplyTax = (values, { resetForm }) => {
     const applicableItems = items.filter(item => item.checked).map(item => item.id);
     console.log({ applied_to: values.applied_to, applicable_items: applicableItems });
+   
   };
 
   const handleSearchChange = (e) => {
@@ -100,6 +101,7 @@ const TaxForm = () => {
               name="taxName"
               className="border border-gray-300 rounded-md p-2 w-full"
               placeholder="Tax Name"
+              required  
             />
             <div className="relative">
               <Field
@@ -107,6 +109,7 @@ const TaxForm = () => {
                 type="number"
                 className="border border-gray-300 rounded-md p-2 w-20 text-center"
                 placeholder="4"
+                required  
               />
               <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500">%</span>
             </div>
@@ -124,6 +127,7 @@ const TaxForm = () => {
                   setItems(items.map(item => ({ ...item, checked: true })));
                 }}
                 className="form-radio"
+                required 
               />
               <span>Apply to all items in collection</span>
             </label>
@@ -139,6 +143,7 @@ const TaxForm = () => {
                   setItems(items.map(item => ({ ...item, checked: false })));
                 }}
                 className="form-radio"
+                required  
               />
               <span>Apply to specific items</span>
             </label>
